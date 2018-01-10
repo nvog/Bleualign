@@ -412,6 +412,13 @@ class Aligner:
         self.gapfinder(translist, targetlist)
         self.log('finished',1)
         self.log(time.asctime(),2)
+        # print(len(self.multialign))
+        # print([a[0] for a in self.multialign])
+        with open('align.log', 'w') as al:
+          al.write(str([a[0] for a in self.multialign]))
+        print('Writing alignment IDs to file align.log')
+        # for i in self.multialign:
+        #   print(i[0])
         return self.multialign
 
 
